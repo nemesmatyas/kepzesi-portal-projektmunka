@@ -4,6 +4,7 @@ import Kepzesek from "./pages/Kepzesek";
 import Kompetenciaim from "./pages/Kompetenciaim";
 import KPI from "./pages/KPI";
 import Login from "./pages/Login";
+import Profil from "./pages/Profil";
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/kompetenciaim"  element={<Kompetenciaim />}/>
         <Route path="/kpi"  element={<KPI />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/profil" element={<Profil />}/>
         <Route path="*" element={<h1>A keresett oldal nem található.</h1>} />
       </Routes>
     </div>
