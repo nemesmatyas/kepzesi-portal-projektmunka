@@ -6,7 +6,7 @@ const KompetenciaSection = (props) => {
     techIsm: ["Ismeret azonosító", "Ismeret neve", "Ismeret típusa"],
     keszKepz: ["Képzés azonosító", "Képzés neve", "Dátum", "Kategória"],
     cert: ["Tanúsítvány azonosító", "Tanúsítvány neve", "Dátum", "Érvényesség"],
-    bukKepz: ["Képzés azonosító", "Képzés neve", "Dátum", "Magyarázat"],
+    bukKepz: ["Képzés azonosító", "Képzés neve", "Dátum", "Magyarázat"]
   };
 
   return (

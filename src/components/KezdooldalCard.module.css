@@ -11,3 +11,7 @@
     height: 450px;
     border: 2px solid black;
 }
+
+.kezdooldal-card:hover {
+    background-color: red;
+}
