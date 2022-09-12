@@ -2,11 +2,10 @@ import { Link } from "react-router-dom";
 import KezdooldalCard from "../components/KezdooldalCard";
 
 const Kezdooldal = props => {
+  props.pageCallback("Kezdőoldal");
 
   return (
     <>
-      <Link to="/">Kezdőoldal</Link>
-      <Link to="/profil">Profilom</Link>
       <KezdooldalCard page="komp">
         <Link to="/kompetenciaim">Kompetenciáim</Link>
       </KezdooldalCard>

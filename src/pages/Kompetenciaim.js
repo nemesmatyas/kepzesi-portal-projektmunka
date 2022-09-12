@@ -39,9 +39,10 @@ const DUMMY_DATA = {
 };
 
 const Kompetenciaim = (props) => {
+  props.pageCallback("Kompetenciáim");
+
   return (
     <>
-      <h1>Kompetenciáim</h1>
       <KompetenciaSection
         data={DUMMY_DATA.techIsm}
         caption="Technikai ismeretek"
