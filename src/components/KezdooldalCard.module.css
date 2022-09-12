@@ -1,0 +1,17 @@
+/*
+ * hoverre legyen a kurzor pointer
+ * legyen egy árnyalattal szürkébb színe
+ * a kártyák a kezdőoldalon legyenek egymás mellett, ahogy a GUI terven láttad
+ * a kép illeszkedjena card-on belül, ne lógjon túl
+ */
+
+
+.kezdooldal-card {
+    width: 350px;
+    height: 450px;
+    border: 2px solid black;
+}
+
+.kezdooldal-card:hover {
+    background-color: red;
+}
