@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Kezdooldal from './pages/Kezdooldal';
 import Kepzesek from "./pages/Kepzesek";
+import KepzesPage from "./components/KepzesPage";
 import Kompetenciaim from "./pages/Kompetenciaim";
 import KPI from "./pages/KPI";
 import Login from "./pages/Login";
@@ -24,11 +25,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Kezdooldal pageCallback={getPage} />} />
         <Route path="/kepzesek" element={<Kepzesek pageCallback={getPage}/>} />
+        <Route path="/kepzesek/:kepzesId" element={<KepzesPage pageCallback={getPage} />} />
         <Route path="/kompetenciaim"  element={<Kompetenciaim pageCallback={getPage} />}/>
         <Route path="/kpi"  element={<KPI pageCallback={getPage} />}/>
         <Route path="/login" element={<Login pageCallback={getPage} />}/>
         <Route path="/profil" element={<Profil pageCallback={getPage} />}/>
-        <Route path="*" element={<h1>A keresett oldal nem található.</h1>} />
+        <Route path="*" element={<h1>A keresett oldal nem található.</h1>} />     
       </Routes>
       <Lablec />
     </div>
