@@ -1,7 +1,6 @@
 import KepzesekList from "../components/KepzesekList";
 
-const Kepzesek = (props) => {
-  props.pageCallback("Elérhető képzések");
+const Kepzesek = () => {
 
   const DUMMY_DATA = [
     {

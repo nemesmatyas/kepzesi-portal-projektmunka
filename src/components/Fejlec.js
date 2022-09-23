@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import classes from "./Fejlec.module.css";
 
-const Fejlec = (props) => {
+const Fejlec = ({ pageName }) => {
   return (
     <header className={classes.fejlec}>
-      <h1>{props.page}</h1>
+      <h1>{pageName}</h1>
       <NavLink to="/">Kezdőoldal</NavLink>
       <NavLink to="/kepzesek">Képzések</NavLink>
       <NavLink to="kompetenciaim">Kompetenciáim</NavLink>

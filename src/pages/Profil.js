@@ -2,9 +2,7 @@ import ProfilAdatlapCard from "../components/ProfilAdatlapCard";
 import JelszoValtoztatasForm from "../components/JelszoValtoztatasForm";
 import UjProfilkepForm from "../components/UjProfilkepForm";
 
-const Profil = (props) => {
-  props.pageCallback("Profilom");
-
+const Profil = () => {
   return (
     <>
       <ProfilAdatlapCard />
