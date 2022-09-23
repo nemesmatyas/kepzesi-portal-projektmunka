@@ -1,6 +1,6 @@
 import LoginForm from "../components/LoginForm";
-const Login = props => {
-  props.pageCallback("Bejelentkezés");
+
+const Login = () => {
   return (
     <>
       <h1>Kérjük, jelentkezzen be!</h1>

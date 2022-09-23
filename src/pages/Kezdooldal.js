@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import KezdooldalCard from "../components/KezdooldalCard";
 
-const Kezdooldal = props => {
-  props.pageCallback("Kezdőoldal");
+const Kezdooldal = () => {
 
   return (
     <>

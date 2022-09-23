@@ -38,8 +38,7 @@ const DUMMY_DATA = {
   ],
 };
 
-const Kompetenciaim = (props) => {
-  props.pageCallback("Kompetenciáim");
+const Kompetenciaim = () => {
 
   return (
     <>

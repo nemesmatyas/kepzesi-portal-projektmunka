@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-const KepzesekList = (props) => {
-
+const KepzesekList = ({ kepzesek }) => {
   return (
     <>
       <table>
@@ -15,16 +14,22 @@ const KepzesekList = (props) => {
           </tr>
         </thead>
         <tbody>
-          {
-            props.kepzesek.map(kepzes => <tr key={Math.random()}>
-                <td><Link to={`/kepzesek/${kepzes.kepzesId}`}>{kepzes.kepzesId}</Link></td>
-                <td>{kepzes.kepzesNev}</td>
-                <td>{kepzes.kepzesDatum}</td>
-                <td>{kepzes.kepzesKat}</td>
-                <td>{kepzes.kepzesAktLetsz + '/' + kepzes.kepzesMaxLetsz}</td>
+          {kepzesek.map((kepzes) => (
+            <tr key={Math.random()}>
+              <td>
+                <Link to={`/kepzesek/${kepzes.kepzesId}`}>
+                  {kepzes.kepzesId}
+                </Link>
+              </td>
+              <td>{kepzes.kepzesNev}</td>
+              <td>{kepzes.kepzesDatum}</td>
+              <td>{kepzes.kepzesKat}</td>
+              <td>{kepzes.kepzesAktLetsz + "/" + kepzes.kepzesMaxLetsz}</td>
+              <td>
                 <button>Jelentkezem</button>
-            </tr>)
-          }
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>
