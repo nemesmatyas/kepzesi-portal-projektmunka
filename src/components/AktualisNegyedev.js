@@ -1,7 +1,9 @@
+import classes from "./AktualisNegyedev.module.css";
+
 const AktualisNegyedev = () => {
   return (
     <div>
-      <h2>Aktuális negyedév</h2>
+      <h2 className={classes["akt-negyedev"]}>Aktuális negyedév</h2>
       <p>Periódus: </p>
       <p>2022 Q4</p>
       <p>Alap mozgóbér:</p>
