@@ -1,9 +1,11 @@
+import classes from "./KepzesekList.module.css";
+
 import { Link } from "react-router-dom";
 
 const KepzesekList = ({ kepzesek }) => {
   return (
     <>
-      <table>
+      <table className={classes["kepzes-table"]}>
         <thead>
           <tr>
             <th>Képzés azonosító</th>
@@ -26,7 +28,7 @@ const KepzesekList = ({ kepzesek }) => {
               <td>{kepzes.kepzesKat}</td>
               <td>{kepzes.kepzesAktLetsz + "/" + kepzes.kepzesMaxLetsz}</td>
               <td>
-                <button>Jelentkezem</button>
+                <button className={classes["gomb"]}>Jelentkezem</button>
               </td>
             </tr>
           ))}

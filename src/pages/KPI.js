@@ -5,8 +5,8 @@ const KPI = () => {
 
   return (
     <>
-      <KorabbiNegyedevek />
-      <AktualisNegyedev />   
+      <AktualisNegyedev />
+      <KorabbiNegyedevek />   
     </>
   );
 };

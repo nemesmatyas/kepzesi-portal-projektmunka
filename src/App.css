@@ -1,10 +1,6 @@
 .App {
     font-size: 30px;
-    margin: 20px;
+    margin: 0px;
 }
 
-.App a{
-    margin: 10px;
-}
-
-
+/*A margin adatokat én írtam át, hogy a fej- és lábléc kimenjen a széléig.*/

@@ -1,0 +1,17 @@
+/* Azt kéne még megoldani, hogy mindig a legalján legyen a lapnak.*/
+
+.lablec {
+    margin-top: 40px;
+    font-weight: bold;
+    background-attachment: scroll;
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(24, 120, 24);
+    color: silver;
+}
+
+p1,
+p2{
+    margin: 20px;
+    background-color:rgb(24, 120, 24);
+}

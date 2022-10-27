@@ -1,3 +1,4 @@
+import './Keret.module.css';
 import { Outlet, useLocation } from "react-router-dom";
 import Fejlec from "./Fejlec";
 import Lablec from "./Lablec";
