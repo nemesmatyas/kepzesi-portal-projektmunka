@@ -1,7 +1,9 @@
+import classes from "./KorabbiNegyedevek.module.css";
+
 const KorabbiNegyedevek = () => {
   return (
     <>
-      <h2>Korábbi negyedéves értékelések</h2>
+      <h2>Korábbi negyedéves értékelések:</h2>
       <table>
         <thead>
           <tr>

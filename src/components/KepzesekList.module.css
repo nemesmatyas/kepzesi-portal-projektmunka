@@ -1,13 +1,18 @@
-.uj-profilkep{
-    margin-left: 20px;
+.kepzes-table{
+    margin-top: 100px;
+    margin-left: 120px;
+    margin-bottom: 400px;
+    text-align: center;
+    background-color: gray;
+}
+
+th{
+    background-color: gray;
 }
 
 .gomb{
     background-color: rgb(234, 109, 109);
-    margin-left: 30px;
     margin-bottom: 10px;
-    height: 30px;
-    width: 100px;
     font-size: 16px;
     font-weight: bold;
 }
