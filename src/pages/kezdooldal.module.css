@@ -1,0 +1,29 @@
+.kezdooldal-container{
+    height: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.kezdooldal-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.kezdooldal-card-link{
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+}
+
+.kezdooldal-card-img{
+    width: 100%;
+    height: 300px;
+}
+
+.kezdooldal-card-img img{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}

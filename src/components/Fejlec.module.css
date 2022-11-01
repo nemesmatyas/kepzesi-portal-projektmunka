@@ -1,4 +1,24 @@
 .fejlec {
     display: flex;
     justify-content: space-between;
+    background-color:rgb(24, 120, 24);
+    color: silver;
+}
+
+.fejlec a{
+    margin-top: 60px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+h1{
+    margin-left: 20px;
+    background-color:rgb(24, 120, 24);
+    color: silver;
+}
+
+.nav{
+    display: inline;
+    background-color: rgb(24, 120, 24);
 }

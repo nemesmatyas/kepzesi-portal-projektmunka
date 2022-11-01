@@ -1,17 +1,29 @@
 .profile-data {
+    margin-top: 30px;
+    margin-left: 20px;
     display: flex;
 }
 
 .profile-data-card {
-    border: 2px solid black;
-    width: 70%;
+    border: 2px solid rgb(211, 86, 86);
+    width: 60%;
 }
 
 .profile-data-card_row {
     display: flex;
-    border: 1px solid red;
+    border: 2px solid rgb(211, 86, 86);;
 }
 
 .profile-data-card_row p {
     margin-right: 50px;
+}
+
+p{
+    margin-left: 30px;
+}
+
+img{
+    margin-left: 200px;
+    width: 400px;
+    height: 400px;
 }

@@ -2,6 +2,7 @@
  * Ez a komponens egy konkrét képzés adatlapját jeleníti meg, miután a felhasználó kiválasztotta az "Elérhető képzések" listából
  * TODO: API hívás az adatok megjelenítéséhez, egyelőre hardcodeolt adatokkal dolgozunk
  */
+
 const KepzesPage = () => {
   // API call helye
 
