@@ -17,6 +17,9 @@ const Keret = () => {
         case '/kpi':
             currentPageName = 'KPI értékelések';
             break;
+        case '/newuser':
+            currentPageName = 'Új felhasználó';
+            break;
         case '/profil':
             currentPageName = 'Profilom';
             break;

@@ -1,4 +1,4 @@
-# Projektmunka - Képzési portál
+#Projektmunka - Képzési portál
 
 **_A projekt tárgyát képező probléma és a projektcél rövid felvázolása:_**
 
@@ -31,4 +31,4 @@ Az alkalmazás bevezetésével az eddig nem hivatalosan, vagy más felületeken 
 |--------------|------------------------------|-------------------------------------------------------|
 | Nemes Mátyás | nemes.matyas@hallgato.sze.hu | Frontend, komponensek kialakítása, objektumhierarchia |
 | Homlok Bence | bence.homlok95@gmail.com     | Backend, bejelentkezés, autentikáció, adatbázis       |
-| Rózsa László | floresz1985@gmail.com        | Webdesign, CSS                                        |
+| Rózsa László | floresz1985@gmail.com        | Webdesign, CSS  

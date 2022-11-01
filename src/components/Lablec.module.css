@@ -10,8 +10,7 @@
     color: silver;
 }
 
-p1,
-p2{
+span {
     margin: 20px;
     background-color:rgb(24, 120, 24);
 }
