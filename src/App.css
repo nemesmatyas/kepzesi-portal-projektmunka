@@ -1,6 +1,7 @@
 .App {
     font-size: 30px;
     margin: 0px;
+    background-color: rgb(228, 214, 197);
 }
 
 /*A margin adatokat én írtam át, hogy a fej- és lábléc kimenjen a széléig.*/

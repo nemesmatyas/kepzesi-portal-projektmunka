@@ -2,6 +2,7 @@ import './Keret.module.css';
 import { Outlet, useLocation } from "react-router-dom";
 import Fejlec from "./Fejlec";
 import Lablec from "./Lablec";
+import classes from "./Keret.module.css";
 
 const Keret = () => {
     const location = useLocation();
@@ -29,7 +30,7 @@ const Keret = () => {
 
   return (
     <>
-      <Fejlec pageName={currentPageName} />
+      <Fejlec pageName={currentPageName} className={classes["fejlec"]} />
         <Outlet />
       <Lablec />
     </>

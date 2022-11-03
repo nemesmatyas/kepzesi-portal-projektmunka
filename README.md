@@ -1,4 +1,4 @@
-#Projektmunka - Képzési portál
+# Projektmunka - Képzési portál
 
 **_A projekt tárgyát képező probléma és a projektcél rövid felvázolása:_**
 
