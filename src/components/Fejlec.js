@@ -6,6 +6,8 @@ const Fejlec = ({ pageName }) => {
   const {user, logout} = UserAuth();
   const navigate = useNavigate();
 
+  console.log(user);
+
   const handleLogout = async () => {
     try {
       await logout();
@@ -16,19 +18,29 @@ const Fejlec = ({ pageName }) => {
     }
   };
 
+  /***** Aktív és inaktív menüpontok CSS-e *****/
+  let activeStyle = {
+    textDecoration: "underline",
+    color: "#161363"
+  }
+
+  let inactiveStyle = {
+    color: "white",
+    textDecoration: "none"    
+  }
+
+  const isActive = ({ isActive }) => isActive ? activeStyle : inactiveStyle;
+
   return (
     <header className={classes.fejlec}>
       <h1>{pageName}</h1>
-      <NavLink to="/kezdooldal">Kezdőoldal</NavLink>
-      <NavLink to="/kepzesek">Képzések</NavLink>
-      <NavLink to="kompetenciaim">Kompetenciáim</NavLink>
-      <NavLink to="/kpi">KPI</NavLink>
-      <NavLink to="/newuser">Új felhasználó</NavLink>
-      <NavLink to="/profil">Profilom</NavLink>
-      <div><p>Bejelentkezve: </p>
-      {user && user.email}
-      <button onClick={handleLogout} label="Kijelentkezés" type="submit">Kijelentkezés</button>
-      </div>
+      <NavLink to="/kezdooldal" style={isActive}>Kezdőoldal</NavLink>
+      <NavLink to="/kepzesek" style={isActive}>Képzések</NavLink>
+      <NavLink to="kompetenciaim" style={isActive}>Kompetenciáim</NavLink>
+      <NavLink to="/kpi" style={isActive}>KPI</NavLink>
+      <NavLink to="/newuser" style={isActive}>Új felhasználó</NavLink>
+      <NavLink to="/profil" style={isActive}>{user.email}</NavLink>
+      <button className={classes["logout-button"]}onClick={handleLogout} label="Kijelentkezés" type="submit">Kijelentkezés</button>  
     </header>
   );
 };

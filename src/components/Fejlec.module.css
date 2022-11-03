@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     background-color:rgb(24, 120, 24);
-    color: silver;
+    color: white;
 }
 
 .fejlec a{
@@ -15,10 +15,20 @@
 .fejlec h1{
     margin-left: 20px;
     background-color:rgb(24, 120, 24);
-    color: silver;
+    color: white;
 }
 
 .nav{
     display: inline;
     background-color: rgb(24, 120, 24);
+}
+
+.logout-button {
+    cursor: pointer;
+    color: white;
+    background-color:rgb(24, 120, 24);
+}
+
+.logout-button:hover {
+    background-color: rgb(37, 186, 37);
 }
