@@ -1,22 +1,13 @@
-.kepzes-table{
+.kepzesek-list{
+    height: 650px;
+}
+
+.kepzesek-table{
     margin-top: 100px;
-    margin-left: 120px;
-    margin-bottom: 400px;
-    text-align: center;
-    background-color: gray;
 }
 
-th{
-    background-color: gray;
-}
-
-.gomb{
-    background-color: rgb(234, 109, 109);
+.jelentkezes{
     margin-bottom: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.gomb:hover {
-    background-color: rgb(241, 166, 166);
+    margin-left: 10px;
+    margin-right: 10px;
 }

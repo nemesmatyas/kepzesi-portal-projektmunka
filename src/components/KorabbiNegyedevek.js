@@ -1,4 +1,4 @@
-import classes from "./KorabbiNegyedevek.module.css";
+import './KorabbiNegyedevek.module.css';
 
 const KorabbiNegyedevek = () => {
   return (

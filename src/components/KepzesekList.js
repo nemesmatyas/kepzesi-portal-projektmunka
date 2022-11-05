@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const KepzesekList = ({ kepzesek }) => {
   return (
-    <>
-      <table className={classes["kepzes-table"]}>
+    <div className={classes["kepzesek-list"]}>
+      <table className={classes["kepzesek-table"]}>
         <thead>
           <tr>
             <th>Képzés azonosító</th>
@@ -13,6 +13,7 @@ const KepzesekList = ({ kepzesek }) => {
             <th>Dátum</th>
             <th>Kategória</th>
             <th>Létszám</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -28,13 +29,13 @@ const KepzesekList = ({ kepzesek }) => {
               <td>{kepzes.kepzesKat}</td>
               <td>{kepzes.kepzesAktLetsz + "/" + kepzes.kepzesMaxLetsz}</td>
               <td>
-                <button className={classes["gomb"]}>Jelentkezem</button>
+                <button className={classes["jelentkezes"]}>Jelentkezem</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 export default KepzesekList;

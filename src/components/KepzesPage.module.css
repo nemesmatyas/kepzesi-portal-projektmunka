@@ -1,0 +1,23 @@
+.kepzes-oldal{
+    height: 800px;
+}
+
+.kepzes-tablazat{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+p{
+    width: 92%;
+    margin-left: 3%;
+    text-align: justify;
+}
+
+.leiras{
+    text-decoration: underline;
+}
+
+.kepzes-button{
+    margin-left: 3%;
+    width: 200px;
+}

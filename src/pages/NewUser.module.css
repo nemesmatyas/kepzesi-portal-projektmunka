@@ -1,0 +1,18 @@
+.new-user-container{
+    height: 720px;
+}
+
+.new-user-button{
+    margin-left: 50px;
+}
+
+input{
+    margin-left: 3%;
+    height: 25px;
+    width: 300px;
+    border: 2px solid black;
+}
+
+h3{
+    margin-left: 3%;
+}

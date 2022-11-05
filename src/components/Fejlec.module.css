@@ -1,34 +1,37 @@
 .fejlec {
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
-    background-color:rgb(24, 120, 24);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(78, 71, 174) 0%, rgba(0,112,87,1) 35%, rgba(0,212,255,1) 100%);
     color: white;
 }
 
 .fejlec a{
-    margin-top: 60px;
-    margin-right: 50px;
+    margin-top: 40px;
+    margin-right: 40px;
     margin-bottom: 20px;
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 .fejlec h1{
-    margin-left: 20px;
-    background-color:rgb(24, 120, 24);
+    margin-left: 1%;
     color: white;
-}
-
-.nav{
-    display: inline;
-    background-color: rgb(24, 120, 24);
 }
 
 .logout-button {
+    margin-top: 40px;
+    margin-right: 20px;
     cursor: pointer;
     color: white;
-    background-color:rgb(24, 120, 24);
+    font-size: 20px;
+    background-color: rgba(0,212,255,1);
 }
 
 .logout-button:hover {
-    background-color: rgb(37, 186, 37);
+    background-color: rgb(8, 91, 107);
 }

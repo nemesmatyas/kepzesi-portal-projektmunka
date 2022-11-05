@@ -1,16 +1,21 @@
 /* Azt kéne még megoldani, hogy mindig a legalján legyen a lapnak.*/
 
 .lablec {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     margin-top: 40px;
+    font-size: 16px;
     font-weight: bold;
-    background-attachment: scroll;
     display: flex;
     justify-content: space-between;
-    background-color:rgb(24, 120, 24);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(78, 71, 174) 0%, rgba(0,112,87,1) 35%, rgba(0,212,255,1) 100%);
     color: white;
 }
 
-span {
+span1,
+span2 {
     margin: 20px;
-    background-color:rgb(24, 120, 24);
 }

@@ -1,4 +1,4 @@
-import classes from "./AktualisNegyedev.module.css";
+import './AktualisNegyedev.module.css';
 
 const AktualisNegyedev = () => {
   return (
@@ -22,10 +22,10 @@ const AktualisNegyedev = () => {
           </tr>
         </tbody>
       </table>
-      <h3>Kitűzött célok:</h3>
+      <h2>Kitűzött célok:</h2>
       <table>
         <thead>
-          <tr className={classes["kituzott-ertekek"]}>
+          <tr>
             <th>Név</th>
             <th>Súly</th>
             <th>Leírás</th>
@@ -34,7 +34,7 @@ const AktualisNegyedev = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className={classes["kituzott-ertekek"]}>
+          <tr>
             <td>Visszajelzés az ügyféltől</td>
             <td>0,2</td>
             <td>Kötelező KPI</td>

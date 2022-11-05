@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import classes from "./KompetenciaSection.module.css";
 
+
 const KompetenciaSection = (props) => {
   const FEJLECEK = {
     techIsm: ["Ismeret azonosító", "Ismeret neve", "Ismeret típusa"],
@@ -33,4 +34,5 @@ const KompetenciaSection = (props) => {
     </table>
   );
 };
+
 export default KompetenciaSection;

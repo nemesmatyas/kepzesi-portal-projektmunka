@@ -7,20 +7,20 @@ const JelszoValtoztatasForm = () => {
   };
 
   return (
-    <>
+    <div>
       <h3>Jelszó megváltoztatása:</h3>
       <form onSubmit={submitHandler}>
         <div>
           <label htmlFor="jelenlegi-jelszo">Jelenlegi jelszó:</label>
-          <input className={classes["jelenlegi-jelszo"]} type="password" />
+          <input className={classes["jelszo"]} type="password" />
           <label htmlFor="uj-jelszo">Új jelszó:</label>
-          <input className={classes["uj-jelszo"]} type="password" />
+          <input className={classes["jelszo"]} type="password" />
           <label htmlFor="uj-jelszo-megegyszer">Új jelszó ismét:</label>
-          <input className={classes["uj-jelszo-ismet"]} type="password" />
-          <button className={classes["gomb"]} type="submit">Elküld</button>
+          <input className={classes["jelszo"]} type="password" />
+          <button className={classes["jelszo-button"]} type="submit">Elküld</button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 export default JelszoValtoztatasForm;

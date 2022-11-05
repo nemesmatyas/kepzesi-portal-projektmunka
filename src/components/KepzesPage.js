@@ -2,26 +2,37 @@
  * Ez a komponens egy konkrét képzés adatlapját jeleníti meg, miután a felhasználó kiválasztotta az "Elérhető képzések" listából
  * TODO: API hívás az adatok megjelenítéséhez, egyelőre hardcodeolt adatokkal dolgozunk
  */
+ import classes from "./KepzesPage.module.css";
 
 const KepzesPage = () => {
   // API call helye
 
   return (
-    <div>
+    <div className={classes["kepzes-oldal"]}>
       {/* Borítókép */}
-      <p>Képzés azonosító:</p>
-      <p>EDU1000101</p>
-      <p>Képzés neve:</p>
-      <p>Képzés 1</p>
-      <p>Képzés kezdete:</p>
-      <p>2022. 01. 01. 8:00</p>
-      <p>Képzés vége:</p>
-      <p>2022. 01. 01. 16:00</p>
-      <p>Kategória</p>
-      <p>Programozás</p>
-      <p>Létszám:</p>
-      <p>5/10</p>
-      <p>Képzés részletes leírása:</p>
+      <table className={classes["kepzes-tablazat"]}>
+        <thead>
+          <tr>
+            <th>Képzés azonosító</th>
+            <th>Képzés neve</th>
+            <th>Képzés kezdete</th>
+            <th>Képzés vége</th>
+            <th>Kategória</th>
+            <th>Létszám</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EDU1000101</td>
+            <td>Képzés 1</td>
+            <td>2022. 01. 01. 8:00</td>
+            <td>2022. 01. 01. 16:00</td>
+            <td>Programozás</td>
+            <td>5/10</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 className={classes["leiras"]}>Képzés részletes leírása:</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue a
         justo at venenatis. Nunc consectetur sem quis libero mollis, eu commodo
@@ -36,7 +47,7 @@ const KepzesPage = () => {
         tincidunt. Nullam condimentum ante libero, et lacinia eros ultrices
         vitae. Phasellus sodales porta augue.
       </p>
-      <button>Jelentkezem</button>
+      <button className={classes["kepzes-button"]}>Jelentkezem</button>
     </div>
   );
 };
