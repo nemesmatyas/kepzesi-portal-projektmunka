@@ -1,7 +1,5 @@
 .App {
     font-size: 30px;
-    margin: 0px;
-    background-color: rgb(228, 214, 197);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgb(78, 71, 174) 0%, rgba(0,112,87,1) 35%, rgba(0,212,255,1) 100%);
 }
-
-/*A margin adatokat én írtam át, hogy a fej- és lábléc kimenjen a széléig.*/

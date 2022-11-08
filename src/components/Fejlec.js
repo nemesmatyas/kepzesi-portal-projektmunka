@@ -40,7 +40,7 @@ const Fejlec = ({ pageName }) => {
       <NavLink to="/kpi" style={isActive}>KPI</NavLink>
       <NavLink to="/newuser" style={isActive}>Új felhasználó</NavLink>
       <NavLink to="/profil" style={isActive}>{user.email}</NavLink>
-      <button className={classes["logout-button"]}onClick={handleLogout} label="Kijelentkezés" type="submit">Kijelentkezés</button>  
+      <button className={classes["logout-button"]} onClick={handleLogout} label="Kijelentkezés" type="submit">Kijelentkezés</button>  
     </header>
   );
 };

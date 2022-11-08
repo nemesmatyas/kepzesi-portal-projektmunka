@@ -1,0 +1,32 @@
+td, tr, th{
+    border: 3px solid black;
+    text-align: center;
+}
+
+table{
+    margin-left: 3%;
+    margin-right: 3%;
+    border-collapse: collapse;
+}
+
+th{
+    width: 20%;
+    height: 50px;
+    background-color: gray;
+}
+
+tr{
+    background-color: rgb(140, 186, 226);
+}
+
+button{
+    background-color: rgb(234, 109, 109);
+    height: 35px;
+    min-width: 150px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: rgb(241, 166, 166);
+}

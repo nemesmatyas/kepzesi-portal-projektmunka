@@ -1,5 +1,5 @@
 import KompetenciaSection from "../components/KompetenciaSection";
-
+import classes from "./Kompetenciaim.module.css";
 const DUMMY_DATA = {
   techIsm: [
     {
@@ -41,7 +41,7 @@ const DUMMY_DATA = {
 const Kompetenciaim = () => {
 
   return (
-    <>
+    <div className={classes["kompetenciaim-container"]}>
       <KompetenciaSection
         data={DUMMY_DATA.techIsm}
         caption="Technikai ismeretek"
@@ -62,7 +62,7 @@ const Kompetenciaim = () => {
         caption="Sikertelen képzéseim"
         type="bukKepz"
       />
-    </>
+    </div>
   );
 };
 export default Kompetenciaim;

@@ -1,23 +1,6 @@
-h2,
-h3{
-    margin-top: 50px;
-    margin-left: 50px;
-    font-size:48px;
+h2{
+    margin-top: 30px;
+    margin-left: 3%;
+    font-size: 40px;
     color: black;
-    text-decoration: underline;
-}
-
-table, td, tr, th{
-    border: 3px solid black;
-    text-align: center;
-}
-
-table{
-    margin-left: 50px;
-    border-collapse: collapse;
-}
-
-th{
-    width: 300px;
-    height: 50px;
 }

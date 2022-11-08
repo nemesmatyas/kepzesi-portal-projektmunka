@@ -1,17 +1,7 @@
 .uj-profilkep{
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
-.gomb{
-    background-color: rgb(234, 109, 109);
-    margin-left: 30px;
-    margin-bottom: 10px;
-    height: 30px;
-    width: 100px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.gomb:hover {
-    background-color: rgb(241, 166, 166);
+.profilkep-button{
+    margin-left: 50px;
 }

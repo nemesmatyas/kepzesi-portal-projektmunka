@@ -3,33 +3,25 @@ import classes from "./ProfilAdatlapCard.module.css";
 const ProfilAdatlapCard = () => {
   return (
     <div className={classes["profile-data"]}>
-      <div className={classes["profile-data-card"]}>
-        <div className={classes["profile-data-card_row"]}>
-          <p>
-            <strong>Név:</strong>
-          </p>
-          <p>Gipsz Jakab</p>
-        </div>
-        <div className={classes["profile-data-card_row"]}>
-          <p>
-            <strong>Törzsszám:</strong>
-          </p>
-          <p>16336</p>
-        </div>
-        <div className={classes["profile-data-card_row"]}>
-          <p>
-            <strong>Beosztás:</strong>
-          </p>
-          <p>Szoftverfejlesztő</p>
-        </div>
-        <div className={classes["profile-data-card_row"]}>
-          <p>
-            <strong>Munkaviszony kezdete:</strong>
-          </p>
-          <p>2019.09.09.</p>
-        </div>
-      </div>
-      <div className="profile-pic">
+        <table>
+          <tr>
+            <td className={classes["cimek"]}>Név:</td>
+            <td>Gipsz Jakab</td>
+          </tr>
+          <tr>
+            <td className={classes["cimek"]}>Törzsszám:</td>
+            <td>16336</td>
+          </tr>
+          <tr>
+            <td className={classes["cimek"]}>Beosztás:</td>
+            <td>Szoftverfejlesztő</td>
+          </tr>
+          <tr>
+            <td className={classes["cimek"]}>Munkaviszony kezdete:</td>
+            <td>2019.09.09.</td>
+          </tr>
+        </table>
+      <div className={classes["profile-pic"]}>
         <img
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&q=80"
           alt="Profilkép"

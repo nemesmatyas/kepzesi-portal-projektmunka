@@ -1,20 +1,11 @@
-/*
- * a kártyák a kezdőoldalon legyenek egymás mellett, ahogy a GUI terven láttad
- * a kép illeszkedjena card-on belül, ne lógjon túl
- */
- 
 .kezdooldal-card {
-    /*background-color: rgb(91, 77, 77);*/
     width: 350px;
     height: 450px;
-    border: 2px solid black;
-    /*margin-top: 100px;
-    margin-left: 150px;
-    margin-bottom: 100px;
-    display: inline-flex;
-    justify-content:space-evenly;*/
+    border: 3px solid black;
+    background-color: white;
 }
 
-.kezdooldal-card:hover {
-    background-color: rgb(51, 45, 45);
-}
+/*.kezdooldal-card:hover {
+    background-color: rgb(200, 226, 167);
+    cursor: pointer;
+}*/
