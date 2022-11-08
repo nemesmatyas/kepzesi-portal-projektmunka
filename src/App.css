@@ -1,5 +1,7 @@
 .App {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     font-size: 30px;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgb(78, 71, 174) 0%, rgba(0,112,87,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(45deg, rgba(0,54,31,1) 0%, rgba(0,161,125,1) 100%);
 }

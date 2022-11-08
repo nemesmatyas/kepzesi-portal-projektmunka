@@ -10,12 +10,9 @@
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgb(78, 71, 174) 0%, rgba(0,112,87,1) 35%, rgba(0,212,255,1) 100%);
     color: white;
 }
 
-span1,
-span2 {
-    margin: 20px;
+.lablec span {
+    margin: 10px;
 }
