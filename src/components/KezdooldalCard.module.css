@@ -1,11 +1,27 @@
-.kezdooldal-card {
-    width: 350px;
-    height: 450px;
-    border: 3px solid black;
-    background-color: white;
+.kezdooldal-card-container {
+  position: relative;
+  transition: transform .2s;
 }
 
-/*.kezdooldal-card:hover {
-    background-color: rgb(200, 226, 167);
-    cursor: pointer;
-}*/
+.kezdooldal-card-container:hover {
+  transform: scale(1.2);
+  box-shadow: rgba(60, 66, 87, 0.12) 10px 20px 28px 0px, rgba(0, 0, 0, 0.12) 10px 6px 12px 0px;
+}
+
+.kezdooldal-card-link {
+    font-size: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+    border: 2px solid #444;
+    box-shadow: rgba(60, 66, 87, 0.12) 5px 10px 14px 0px, rgba(0, 0, 0, 0.12) 5px 3px 6px 0px;
+}
+
+.kezdooldal-card-link span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
