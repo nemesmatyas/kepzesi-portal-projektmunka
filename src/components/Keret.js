@@ -10,7 +10,7 @@ const Keret = () => {
 
     switch (location.pathname) {
         case '/kepzesek':
-            currentPageName = 'Elérhető képzések';
+            currentPageName = 'Képzések';
             break;
         case '/kompetenciaim':
             currentPageName = 'Kompetenciáim';

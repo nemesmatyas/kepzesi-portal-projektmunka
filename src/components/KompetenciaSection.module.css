@@ -3,3 +3,10 @@
     margin-bottom: 40px;
     background-color: rgb(140, 186, 226);
 }
+
+@media (max-width: 400px) and (max-height: 850px) {
+    .komp-sect-table {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+  }

@@ -11,4 +11,35 @@ label{
 
 .jelszo-button{
     margin-left: 40px;
+    width: 150px;
+    height: 30px;
 }
+
+@media (max-width: 400px) and (max-height: 850px) {
+    label{
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    
+    .jelszo-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .jelszo{
+        margin-left: 3%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        height: 20px;
+        width: 150px;
+        border: 2px solid black;
+    }
+    
+    .jelszo-button{
+        margin-left: 3%;
+        margin-top: 15px;
+        width: 100px;
+        height: 20px;
+        font-size: 12px;
+    }
+  }

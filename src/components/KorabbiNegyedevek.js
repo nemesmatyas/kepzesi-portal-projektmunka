@@ -1,5 +1,3 @@
-import './KorabbiNegyedevek.module.css';
-
 const KorabbiNegyedevek = () => {
   return (
     <>
