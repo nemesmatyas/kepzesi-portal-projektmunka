@@ -4,4 +4,24 @@
 
 .profilkep-button{
     margin-left: 50px;
+    width: 150px;
+    height: 30px;
 }
+
+@media (max-width: 400px) and (max-height: 850px) {
+    .profilkep-szoveg{
+        margin-bottom: 0px;
+    }
+    
+    .uj-profilkep{
+        margin-left: 3%;
+        border: 1px solid black;
+    }
+    
+    .profilkep-button{
+        margin-left: 3%;
+        font-size: 12px;
+        width: 100px;
+        height: 20px;
+    }
+  }

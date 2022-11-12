@@ -1,3 +1,5 @@
-.kompetenciaim-container{
-    height: 850px;
-}
+@media (max-width: 400px) and (max-height: 850px) {
+    .kompetenciaim-container{
+        font-size: 18px;
+    }
+  }

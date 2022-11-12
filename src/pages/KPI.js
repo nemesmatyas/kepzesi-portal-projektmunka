@@ -1,11 +1,10 @@
 import KorabbiNegyedevek from "../components/KorabbiNegyedevek";
 import AktualisNegyedev from "../components/AktualisNegyedev";
-import classes from "./KPI.module.css";
 
 const KPI = () => {
 
   return (
-    <div className={classes["kpi-container"]}>
+    <div>
       <AktualisNegyedev />
       <KorabbiNegyedevek />   
     </div>

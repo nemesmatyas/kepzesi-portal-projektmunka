@@ -10,7 +10,7 @@ const JelszoValtoztatasForm = () => {
     <div>
       <h3>Jelszó megváltoztatása:</h3>
       <form onSubmit={submitHandler}>
-        <div>
+        <div className={classes["jelszo-container"]}>
           <label htmlFor="jelenlegi-jelszo">Jelenlegi jelszó:</label>
           <input className={classes["jelszo"]} type="password" />
           <label htmlFor="uj-jelszo">Új jelszó:</label>
