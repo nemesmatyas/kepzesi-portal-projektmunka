@@ -2,10 +2,9 @@
  * Ez a komponens egy konkrét képzés adatlapját jeleníti meg, miután a felhasználó kiválasztotta az "Elérhető képzések" listából
  * TODO: API hívás az adatok megjelenítéséhez, egyelőre hardcodeolt adatokkal dolgozunk
  */
- import classes from "./KepzesPage.module.css";
+import classes from "./KepzesPage.module.css";
 
 const KepzesPage = () => {
-  // API call helye
 
   return (
     <div className={classes["kepzes-oldal"]}>
