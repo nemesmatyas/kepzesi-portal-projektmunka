@@ -1,28 +1,36 @@
-.kepzesek-table{
-    margin-top: 100px;
+.kepzesek-table {
+  margin-top: 100px;
 }
 
-.jelentkezes{
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+.megtelt,
+.megtelt:hover {
+  margin: 10px;
+  background-color: grey;
 }
 
-@media (max-width: 400px) and (max-height: 850px) {  
-    .kepzesek-table{
-        margin-top: 50px;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-    
-    .jelentkezes{
-        margin: 0px;
-        padding: 0;
-        font-size: 8px;
-    }
+.mar-jelentkezett,
+.mar-jelentkezett:hover {
+  margin: 10px;
+  background-color: green;
+}
 
-    tr, th, td{
-        border: 1px solid black;
-        font-size: 10px;
-    }
+@media (max-width: 400px) and (max-height: 850px) {
+  .kepzesek-table {
+    margin-top: 50px;
+    margin-left: 1%;
+    margin-right: 1%;
   }
+
+  .jelentkezes {
+    margin: 0px;
+    padding: 0;
+    font-size: 8px;
+  }
+
+  tr,
+  th,
+  td {
+    border: 1px solid black;
+    font-size: 10px;
+  }
+}
