@@ -11,6 +11,7 @@ import Login_Page from "./pages/Login";
 import NewUser from "./pages/NewUser";
 import { AuthContextProvider } from "./components/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import NewKepzes from "./pages/NewKepzes";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
               <Route path="kezdooldal" element={<ProtectedRoute><Kezdooldal /></ProtectedRoute>} />
               <Route path="kepzesek" element={<ProtectedRoute><Kepzesek /></ProtectedRoute>} />
               <Route path="/kepzesek/:kepzesId" element={<ProtectedRoute><KepzesPage /></ProtectedRoute>} />
+              <Route path="/kepzesek/newkepzes" element={<ProtectedRoute><NewKepzes /></ProtectedRoute>} />
               <Route path="kompetenciaim" element={<ProtectedRoute><Kompetenciaim /></ProtectedRoute>} />
               <Route path="kpi" element={<ProtectedRoute><KPI /></ProtectedRoute>}/>
               <Route path="newuser" element={<ProtectedRoute><NewUser /></ProtectedRoute>}/>

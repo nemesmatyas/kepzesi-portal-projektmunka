@@ -1,8 +1,20 @@
 import classes from "./KepzesekList.module.css";
-
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { db } from "./firebase-config";
+import { collection, getDocs } from "firebase/firestore";
 
 const KepzesekList = ({ kepzesek }) => {
+
+  useEffect(() => {
+    ;(async () => {
+      const querySnapshot = await getDocs(collection(db, "kepzesek"));
+      querySnapshot.forEach((doc) => {
+      console.log(doc.id, " => ", doc.data());
+    });
+    })()
+  },[])
+
   return (
     <div className={classes["kepzesek-list"]}>
       <table className={classes["kepzesek-table"]}>
