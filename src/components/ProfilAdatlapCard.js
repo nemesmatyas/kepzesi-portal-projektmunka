@@ -4,7 +4,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "./firebase-config";
 import { useState } from "react";
 import { doc, onSnapshot } from "firebase/firestore";
-import { UserAuth } from "./AuthContext";
 
 
 const ProfilAdatlapCard = () => {

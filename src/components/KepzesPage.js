@@ -2,9 +2,40 @@
  * Ez a komponens egy konkrét képzés adatlapját jeleníti meg, miután a felhasználó kiválasztotta az "Elérhető képzések" listából
  * TODO: API hívás az adatok megjelenítéséhez, egyelőre hardcodeolt adatokkal dolgozunk
  */
+import KepzesJelentkezes from "./KepzesJelentkezes";
+import { UserContext } from "./AuthContext";
 import classes from "./KepzesPage.module.css";
+import { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { db } from "./firebase-config";
+import { onSnapshot, doc} from "firebase/firestore";
+
 
 const KepzesPage = () => {
+  const userContext = useContext(UserContext);
+  let { kepzesId } = useParams();
+  const [kepzes_neve, setKepzesNeve] = useState("");
+  const [date, setKepzesDate] = useState("");
+  const [start_time, setKepzesStartTime] = useState("");
+  const [end_time, setKepzesEndTime] = useState("");
+  const [kategoria, setKepzesKategoria] = useState("");
+  const [leiras, setKepzesLeiras] = useState("");
+  const [max_letszam, setKepzesMaxLetszam] = useState("");
+  const [resztvevok, setKepzesResztvevok] = useState([]);
+
+  useEffect(() => {
+      onSnapshot(doc(db, "kepzesek", kepzesId), (doc) => {
+          console.log("Current data: ", doc.data());
+          setKepzesNeve(doc.get("kepzes_neve"));
+          setKepzesDate(doc.get("date"));
+          setKepzesStartTime(doc.get("start_time"));
+          setKepzesEndTime(doc.get("end_time"));
+          setKepzesKategoria(doc.get("kategoria"));
+          setKepzesLeiras(doc.get("leiras"));
+          setKepzesMaxLetszam(doc.get("max_letszam"));
+          setKepzesResztvevok(doc.get("resztvevok"));
+        }); 
+    },[])
 
   return (
     <div className={classes["kepzes-oldal"]}>
@@ -22,29 +53,18 @@ const KepzesPage = () => {
         </thead>
         <tbody>
           <tr>
-            <td>EDU1000101</td>
-            <td>Képzés 1</td>
-            <td>2022. 01. 01. 8:00</td>
-            <td>2022. 01. 01. 16:00</td>
-            <td>Programozás</td>
-            <td>5/10</td>
+            <td>{kepzesId}</td>
+            <td>{kepzes_neve}</td>
+            <td>{date} {start_time}</td>
+            <td>{date} {end_time}</td>
+            <td>{kategoria}</td>
+            <td>{resztvevok.length + "/" + max_letszam}</td>
           </tr>
         </tbody>
       </table>
       <h3 className={classes["leiras"]}>Képzés részletes leírása:</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue a
-        justo at venenatis. Nunc consectetur sem quis libero mollis, eu commodo
-        nibh pharetra. Nullam at odio faucibus, finibus purus ac, iaculis odio.
-        Integer porta diam ac justo faucibus, vel commodo quam sagittis. Nullam
-        porttitor imperdiet sapien non accumsan. Curabitur egestas suscipit
-        pharetra. Donec auctor libero id elit finibus tincidunt. Vestibulum
-        venenatis, massa id ultricies pharetra, augue eros cursus enim, sed
-        feugiat elit leo eget orci. Ut vel tincidunt nibh. Nunc molestie mi ac
-        lacus tincidunt, id mollis ante tincidunt. Ut tellus nisi, ullamcorper
-        sed lacus ac, ornare laoreet enim. Donec eget sem non nisl aliquam
-        tincidunt. Nullam condimentum ante libero, et lacinia eros ultrices
-        vitae. Phasellus sodales porta augue.
+        {leiras}
       </p>
       <button className={classes["kepzes-button"]}>Jelentkezem</button>
     </div>
