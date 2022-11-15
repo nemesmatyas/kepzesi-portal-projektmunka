@@ -19,7 +19,7 @@ function NewKepzes () {
         setError("");
         try {
             const kepzesRef = doc(db, "kepzesek", kepzes_azon);
-            const kepzesDoc = await setDoc(kepzesRef, 
+            await setDoc(kepzesRef, 
             {date: kepzes_date, 
             end_time: kepzes_end_time,
             kategoria: kepzes_kategoria,
