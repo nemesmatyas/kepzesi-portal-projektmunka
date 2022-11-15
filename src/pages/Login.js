@@ -12,6 +12,7 @@ function Login_Page() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { login } = UserAuth();
+  const { forgotPassword } = UserAuth();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,6 +24,13 @@ function Login_Page() {
       setError(error.message);
       console.log(error.message);
     }
+  };
+
+  const forgotPasswordHandler = () => {
+    if(loginEmail) forgotPassword(loginEmail).then(() => {
+      console.log("Az elfelejtett jelszó e-mail elküldve");
+      setLoginEmail("");
+    })
   };
 
   return (
@@ -49,6 +57,7 @@ function Login_Page() {
                 placeholder="Jelszó..."
                 onChange={(event) => setLoginPassword(event.target.value)}
               />
+              <button onClick={forgotPasswordHandler}>Elfelejtette a jelszavát?</button>
               {error ? (
                 <div className={classes["login-invalid"]}>
                   Helytelen felhasználónév vagy jelszó.
