@@ -1,0 +1,15 @@
+.uj-tech-ism {
+    max-width: 50vw;
+    max-height: 150px;
+    width: 10%;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: greenyellow;
+    border-radius: 5px;
+}
+
+.uj-tech-ism:hover {
+    cursor: pointer;
+    background-color: chartreuse;
+}
