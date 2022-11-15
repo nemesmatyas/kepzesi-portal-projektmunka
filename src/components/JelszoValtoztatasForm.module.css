@@ -9,6 +9,10 @@ label{
     width: 200px;
 }
 
+.jelszo-felirat{
+    color: black;
+}
+
 .jelszo-button{
     margin-left: 40px;
     width: 150px;
@@ -16,6 +20,12 @@ label{
 }
 
 @media (max-width: 400px) and (max-height: 850px) {
+    .jelszo-felirat{
+        margin-bottom: 0px;
+        font-size: 24px;
+        margin-left: 3%;
+    }
+
     label{
         font-size: 12px;
         margin-top: 5px;

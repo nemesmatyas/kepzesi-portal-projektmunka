@@ -44,13 +44,14 @@ const TechnikaiIsmeretek = () => {
       {technikaiIsmeretek.length === 0 ? (
         <div className={classes["nincs-tech-ism"]}>Nincs technikai ismeret</div>
       ) : (
-        <table>
+        <table className={classes["tech-ism-table"]}>
           <caption>Technikai ismeretek</caption>
           <thead>
             <tr>
               <th>Ismeret neve</th>
               <th>Ismeret típusa</th>
               <th>Ismeret szintje</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
