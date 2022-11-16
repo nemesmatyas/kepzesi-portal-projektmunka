@@ -1,0 +1,7 @@
+.cert-torles {
+    margin: 10px;
+}
+
+.cert-torles:hover {
+    cursor: pointer;
+}

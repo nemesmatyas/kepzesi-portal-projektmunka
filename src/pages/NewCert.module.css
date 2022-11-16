@@ -1,0 +1,39 @@
+.uj-cert-container {
+    margin-top: 100px;
+}
+
+.uj-cert-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+}
+
+.uj-cert-h1 {
+    color: white;
+    font-size: 48px;
+    text-align: center;
+}
+
+.uj-cert-form label {
+    font-size: 24px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.uj-cert-form select {
+    margin-left: 3%;
+    font-size: 16px;
+    width: 300px;
+}
+
+.uj-cert-mentes-button {
+    margin-top: 30px;
+    margin-left: 3%;
+    padding: 5px 25px 5px 25px;
+}
+
+.uj-cert-mentes-button:hover {
+    cursor: pointer;
+}

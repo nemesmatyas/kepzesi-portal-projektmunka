@@ -13,6 +13,7 @@ import { AuthContextProvider } from "./components/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NewKepzes from "./pages/NewKepzes";
 import NewTechIsm from "./pages/NewTechIsm";
+import NewCert from "./pages/NewCert";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
               <Route path="newuser" element={<ProtectedRoute><NewUser /></ProtectedRoute>}/>
               <Route path="profil" element={<ProtectedRoute><Profil /></ProtectedRoute>}/>
               <Route path="ujTechnikaiIsmeret" element={<ProtectedRoute><NewTechIsm /></ProtectedRoute>}/>
+              <Route path="ujTanusitvany" element={<ProtectedRoute><NewCert /></ProtectedRoute>} />
             </Route>      
             <Route path="*" element={<h1>A keresett oldal nem található.</h1>} />   
         </Routes>
