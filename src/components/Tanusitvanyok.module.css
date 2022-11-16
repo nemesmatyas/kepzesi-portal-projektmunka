@@ -1,13 +1,13 @@
-.tech-ism-container {
+.certs-container {
     margin-bottom: 80px;
 }
 
-.uj-tech-ism-container {
+.uj-cert-container {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
 
-.nincs-tech-ism {
+.nincs-cert {
     text-align: center;
 }

@@ -40,7 +40,7 @@ const TechnikaiIsmeretek = () => {
   console.log(technikaiIsmeretek);
 
   return (
-    <>
+    <div className={classes["tech-ism-container"]}>
       {technikaiIsmeretek.length === 0 ? (
         <div className={classes["nincs-tech-ism"]}>Nincs technikai ismeret</div>
       ) : (
@@ -70,7 +70,7 @@ const TechnikaiIsmeretek = () => {
       <div className={classes["uj-tech-ism-container"]}>
         <UjTechIsmRedirectButton />
       </div>
-    </>
+    </div>
   );
 };
 export default TechnikaiIsmeretek;
