@@ -8,7 +8,7 @@ const JelszoValtoztatasForm = () => {
 
   return (
     <div>
-      <h3>Jelszó megváltoztatása:</h3>
+      <h3 className={classes["jelszo-felirat"]}>Jelszó megváltoztatása:</h3>
       <form onSubmit={submitHandler}>
         <div className={classes["jelszo-container"]}>
           <label htmlFor="jelenlegi-jelszo">Jelenlegi jelszó:</label>

@@ -1,7 +1,21 @@
 .tech-ism-torles {
     margin: 10px;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
 }
 
 .tech-ism-torles:hover {
     cursor: pointer;
 }
+
+@media (max-width: 400px) and (max-height: 850px) {
+    .tech-ism-torles {
+        margin: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: auto;
+        height: auto;
+        font-size: 10px;
+    }
+  }
