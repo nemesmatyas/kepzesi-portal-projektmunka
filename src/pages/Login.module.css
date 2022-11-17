@@ -29,12 +29,14 @@
     font-size: 16px;
     width: 100%;
     display: inline-block;
+    margin-left: 30px;
 }
 
 .login-header {
     font-size: 30px;
     font-weight: 500;
     text-decoration: none;
+    margin-left: 30px;
 }
 
 .login-input-email, .login-input-password {
@@ -84,6 +86,10 @@
     
     .login-container {
         width: 350px;
+    }
+
+    .login-header {
+        font-size: 24px;
     }
     
     .login-input-email, .login-input-password {

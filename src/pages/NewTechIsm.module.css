@@ -1,5 +1,10 @@
 .uj-tech-ism-container {
     margin-top: 100px;
+    width: 550px;
+    margin-left: 35%;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    box-shadow: rgba(60, 66, 87, 0.12) 12px 8px 4px 0px, rgba(0, 0, 0, 0.12) 8px 6px 4px 4px;
 }
 
 .uj-tech-ism-form {
@@ -10,16 +15,17 @@
 }
 
 .uj-tech-ism-h1 {
-    color: white;
+    color: black;
     font-size: 48px;
     text-align: center;
+    padding-top: 30px;
 }
 
 .uj-tech-ism-form label {
     font-size: 24px;
-    color: white;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .uj-tech-ism-form input {
@@ -35,6 +41,7 @@
 
 .uj-tech-ism-mentes-button {
     margin-top: 30px;
+    margin-bottom: 50px;
     margin-left: 3%;
     padding: 5px 25px 5px 25px;
 }
@@ -45,7 +52,10 @@
 
 @media (max-width: 400px) and (max-height: 850px) {
     .uj-tech-ism-container {
-        margin-top: 40px;
+        margin-top: 50px;
+        width: 350px;
+        margin-left: 5%;
+        border-radius: 15px;
     }
     
     .uj-tech-ism-h1 {
@@ -57,6 +67,6 @@
     }
 
     .uj-tech-ism-mentes-button {
-        padding: 5px 20px 5px 20px;
+        padding: 5px 15px 5px 15px;
     }
 }

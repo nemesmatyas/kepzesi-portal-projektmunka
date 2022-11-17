@@ -50,7 +50,7 @@ const NewCert = () => {
       <h1 className={classes["uj-cert-h1"]}>Új tanúsítvány hozzáadása</h1>
       <form className={classes["uj-cert-form"]} onSubmit={submitHandler}>
         <label htmlFor="cert-nev">Tanúsítvány neve</label>
-        <input
+        <input className={classes["uj-cert-input"]}
           type="text"
           id="cert-nev"
           placeholder="Tanúsítvány neve..."
@@ -59,7 +59,7 @@ const NewCert = () => {
           required
         />
         <label htmlFor="cert-azon">Tanúsítvány azonosítója</label>
-        <input
+        <input className={classes["uj-cert-input"]}
           type="text"
           id="cert-azon"
           placeholder="Tanúsítvány azonosítója..."
@@ -69,7 +69,7 @@ const NewCert = () => {
         <label htmlFor="cert-kiallitas-datuma">
           Tanúsítvány kiállításának időpontja
         </label>
-        <input
+        <input className={classes["uj-cert-date"]}
           type="date"
           id="cert-kiallitas-datuma"
           value={ujCertKiallitasDatum}
@@ -78,7 +78,7 @@ const NewCert = () => {
         <label htmlFor="cert-lejarat-datuma">
           Tanúsítvány lejáratának időpontja
         </label>
-        <input
+        <input className={classes["uj-cert-date"]}
           type="date"
           id="cert-lejarat-datuma"
           value={ujCertLejaratDatum}
