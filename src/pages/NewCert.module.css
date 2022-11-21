@@ -1,5 +1,10 @@
 .uj-cert-container {
-    margin-top: 100px;
+    width: 550px;
+    margin-top: 80px;
+    margin-left: 35%;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    box-shadow: rgba(60, 66, 87, 0.12) 12px 8px 4px 0px, rgba(0, 0, 0, 0.12) 8px 6px 4px 4px;
 }
 
 .uj-cert-form {
@@ -10,30 +15,60 @@
 }
 
 .uj-cert-h1 {
-    color: white;
+    color: black;
     font-size: 48px;
     text-align: center;
+    padding-top: 30px;
 }
 
 .uj-cert-form label {
     font-size: 24px;
-    color: white;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.uj-cert-form select {
-    margin-left: 3%;
-    font-size: 16px;
+.uj-cert-input {
     width: 300px;
+    margin-left: 3%;
+}
+
+.uj-cert-date {
+    margin-left: 3%;
 }
 
 .uj-cert-mentes-button {
     margin-top: 30px;
+    margin-bottom: 50px;
     margin-left: 3%;
     padding: 5px 25px 5px 25px;
 }
 
 .uj-cert-mentes-button:hover {
     cursor: pointer;
+}
+
+@media (max-width: 400px) and (max-height: 850px) {
+    .uj-cert-container {
+        margin-top: 50px;
+        width: 350px;
+        margin-left: 5%;
+        border-radius: 15px;
+    }
+        
+    .uj-cert-h1 {
+        font-size: 30px;
+    }
+    
+    .uj-cert-form label {
+        font-size: 18px;
+    }
+    
+    .uj-cert-input {
+        width: 250px;
+    }
+    
+    .uj-cert-mentes-button {
+        padding: 5px 15px 5px 15px;
+    }
 }

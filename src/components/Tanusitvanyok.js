@@ -48,6 +48,7 @@ const Tanusitvanyok = () => {
               <th>Tanúsítvány neve</th>
               <th>Kiállítás dátuma</th>
               <th>Érvényességi idő</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
