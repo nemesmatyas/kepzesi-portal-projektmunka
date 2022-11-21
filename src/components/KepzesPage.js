@@ -41,26 +41,30 @@ const KepzesPage = () => {
     <div className={classes["kepzes-oldal"]}>
       {/* Borítókép */}
       <table className={classes["kepzes-tablazat"]}>
-        <thead>
-          <tr>
-            <th>Képzés azonosító</th>
-            <th>Képzés neve</th>
-            <th>Képzés kezdete</th>
-            <th>Képzés vége</th>
-            <th>Kategória</th>
-            <th>Létszám</th>
+        <tr>
+            <td className={classes["cimek"]}>Képzés azonosító:</td>
+            <td className={classes["ertekek"]}>{kepzesId}</td>
           </tr>
-        </thead>
-        <tbody>
           <tr>
-            <td>{kepzesId}</td>
-            <td>{kepzes_neve}</td>
-            <td>{date} {start_time}</td>
-            <td>{date} {end_time}</td>
-            <td>{kategoria}</td>
-            <td>{resztvevok.length + "/" + max_letszam}</td>
+            <td className={classes["cimek"]}>Képzés neve:</td>
+            <td className={classes["ertekek"]}>{kepzes_neve}</td>
           </tr>
-        </tbody>
+          <tr>
+            <td className={classes["cimek"]}>Képzés kezdete:</td>
+            <td className={classes["ertekek"]}>{date} {start_time}</td>
+          </tr>
+          <tr>
+            <td className={classes["cimek"]}>Képzés vége:</td>
+            <td className={classes["ertekek"]}>{date} {end_time}</td>
+          </tr>
+          <tr>
+            <td className={classes["cimek"]}>Kategória:</td>
+            <td className={classes["ertekek"]}>{kategoria}</td>
+          </tr>
+          <tr>
+            <td className={classes["cimek"]}>Létszám:</td>
+            <td className={classes["ertekek"]}>{resztvevok.length + "/" + max_letszam}</td>
+          </tr>
       </table>
       <h3 className={classes["leiras"]}>Képzés részletes leírása:</h3>
       <p>
