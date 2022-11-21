@@ -4,11 +4,13 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "./firebase-config";
 import { useState } from "react";
 import { doc, onSnapshot } from "firebase/firestore";
+import UjProfilkepForm from "./UjProfilkepForm";
 
 
 const ProfilAdatlapCard = () => {
 
   const [user, setUser] = useState({});
+  const [photoURL, setPhotoURL] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr05Ofxi9imMLzZoyfL8jBznxXFDNYCjOs0w&usqp=CAU");
   const [currentUserFirstname, setCurrentUserFirstname] = useState("");
   const [currentUserLastname, setCurrentUserLastname] = useState("");
   const [currentUserIdnumber, setCurrentUserIdnumber] = useState("");
@@ -26,7 +28,10 @@ const ProfilAdatlapCard = () => {
           setCurrentUserIdnumber(doc.get("identification_number"));
           setCurrentUserPosition(doc.get("position"));
           setCurrentUserStartdate(doc.get("start_date"));
-        }); 
+        });
+        if (currentUser?.photoURL){
+          setPhotoURL(currentUser.photoURL);
+        }
     })
     return () => {
         unsubscribe();
@@ -55,7 +60,7 @@ const ProfilAdatlapCard = () => {
         </table>
       <div className={classes["profile-pic"]}>
         <img
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&q=80"
+          src={photoURL}
           alt="Profilkép"
         />
       </div>

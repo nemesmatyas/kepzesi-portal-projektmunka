@@ -32,7 +32,7 @@ const Keret = () => {
     <>
       <Fejlec pageName={currentPageName} className={classes["fejlec"]} />
         <Outlet />
-      <Lablec />
+      
     </>
   );
 };

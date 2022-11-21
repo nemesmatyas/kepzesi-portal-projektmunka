@@ -26,9 +26,10 @@ function Login_Page() {
     }
   };
 
-  const forgotPasswordHandler = () => {
+  const forgotPasswordHandler = (event) => {
+    event.preventDefault();
     if(loginEmail) forgotPassword(loginEmail).then(() => {
-      console.log("Az elfelejtett jelszó e-mail elküldve");
+      console.log("Az elfelejtett jelszó a ",loginEmail," e-mail címre elküldve!");
       setLoginEmail("");
     })
   };
@@ -57,7 +58,7 @@ function Login_Page() {
                 placeholder="Jelszó..."
                 onChange={(event) => setLoginPassword(event.target.value)}
               />
-              <button onClick={forgotPasswordHandler}>Elfelejtette a jelszavát?</button>
+              <a href="/" onClick={forgotPasswordHandler}>Elfelejtette a jelszavát?</a>
               {error ? (
                 <div className={classes["login-invalid"]}>
                   Helytelen felhasználónév vagy jelszó.
