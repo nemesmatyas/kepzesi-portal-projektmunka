@@ -32,13 +32,14 @@ const Fejlec = ({ pageName }) => {
   const isActive = ({ isActive }) => isActive ? activeStyle : inactiveStyle;
 
   return (
+    
     <header className={classes.fejlec}>
       <h1>{pageName}</h1>
       <NavLink to="/kezdooldal" style={isActive}>Kezdőoldal</NavLink>
       <NavLink to="/kepzesek" style={isActive}>Képzések</NavLink>
-      <NavLink to="kompetenciaim" style={isActive}>Kompetenciáim</NavLink>
+      <NavLink to="/kompetenciaim" style={isActive}>Kompetenciáim</NavLink>
       <NavLink to="/kpi" style={isActive}>KPI</NavLink>
-      <NavLink to="/newuser" style={isActive}>Új felhasználó</NavLink>
+      <NavLink to="/admin" style={isActive}>Admin</NavLink>
       <NavLink to="/profil" style={isActive}>{user.email}</NavLink>
       <button className={classes["logout-button"]} onClick={handleLogout} label="Kijelentkezés" type="submit">Kijelentkezés</button>  
     </header>

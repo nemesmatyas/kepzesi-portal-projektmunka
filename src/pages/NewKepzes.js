@@ -2,52 +2,148 @@ import { useState } from "react";
 import { db } from "../components/firebase-config";
 import { doc, setDoc } from "firebase/firestore";
 
-function NewKepzes () {
+import classes from "./NewKepzes.module.css";
 
-    const [kepzes_azon, setKepzesAzon] = useState("");
-    const [kepzes_neve, setKepzesNev] = useState("");
-    const [kepzes_kategoria, setKepzesKat] = useState("");
-    const [kepzes_max_letszam, setKepzesMaxLetsz] = useState("");
-    const [kepzes_date, setKepzesDate] = useState("");
-    const [kepzes_start_time, setKepzesStartTime] = useState("");
-    const [kepzes_end_time, setKepzesEndTime] = useState("");
-    const [kepzes_leiras, setKepzesLeiras] = useState("");
-    const [error, setError] = useState("");
+function NewKepzes() {
+  const [kepzesAzon, setKepzesAzon] = useState("");
+  const [kepzesNeve, setKepzesNev] = useState("");
+  const [kepzesKategoria, setKepzesKat] = useState("");
+  const [kepzesMaxLetszam, setKepzesMaxLetsz] = useState("");
+  const [kepzesDate, setKepzesDate] = useState("");
+  const [kepzesStartTime, setKepzesStartTime] = useState("");
+  const [kepzesEndTime, setKepzesEndTime] = useState("");
+  const [kepzesLeiras, setKepzesLeiras] = useState("");
+  const [error, setError] = useState("");
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        setError("");
-        try {
-            const kepzesRef = doc(db, "kepzesek", kepzes_azon);
-            await setDoc(kepzesRef, 
-            {date: kepzes_date, 
-            end_time: kepzes_end_time,
-            kategoria: kepzes_kategoria,
-            kepzes_neve: kepzes_neve,
-            max_letszam: kepzes_max_letszam,
-            start_time: kepzes_start_time,
-            leiras: kepzes_leiras,
-            aktualis_letszam: 0});
-            alert("A képzés sikeresen létrehozva!");
-          } catch (error) {
-            setError(error.message);
-            console.log(error.message);
-          }
-    };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setError("");
+    try {
+      const kepzesRef = doc(db, "kepzesek", kepzesAzon);
+      await setDoc(kepzesRef, {
+        date: kepzesDate,
+        end_time: kepzesEndTime,
+        kategoria: kepzesKategoria,
+        kepzes_neve: kepzesNeve,
+        max_letszam: kepzesMaxLetszam,
+        start_time: kepzesStartTime,
+        leiras: kepzesLeiras,
+        aktualis_letszam: 0,
+        resztvevok: [],
+      });
+      alert("A képzés sikeresen létrehozva!");
+      setKepzesAzon("");
+      setKepzesNev("");
+      setKepzesKat("");
+      setKepzesMaxLetsz("");
+      setKepzesDate("");
+      setKepzesStartTime("");
+      setKepzesEndTime("");
+      setKepzesLeiras("");
+    } catch (error) {
+      alert("Valami hiba történt");
+      setError(error.message);
+      console.log(error.message);
+    }
+  };
 
-    return (
-        <form >
-            <h3>Új képzés létrehozása</h3>
-            <input type="text" id="kepzes_azon" placeholder="Képzés azonosító..." onChange={(event) => { setKepzesAzon(event.target.value); }} />
-            <input type="text" id="kepzes_neve" placeholder="Képzés neve..." onChange={(event) => { setKepzesNev(event.target.value); }} />
-            <input type="text" id="kepzes_kategoria" placeholder="Kategória..." onChange={(event) => { setKepzesKat(event.target.value); }} />
-            <input type="number" id="kepzes_max_letszam" placeholder="Max létszám..." onChange={(event) => { setKepzesMaxLetsz(event.target.value); }} />
-            <input type="text" id="kepzes_date" placeholder="Képzés napja..." onChange={(event) => { setKepzesDate(event.target.value); }} />
-            <input type="text" id="kepzes_start_time" placeholder="Képzési kezdésének ideje..." onChange={(event) => { setKepzesStartTime(event.target.value); }} />
-            <input type="text" id="kepzes_end_time" placeholder="Képzés végének ideje..." onChange={(event) => { setKepzesEndTime(event.target.value); }} />
-            <input type="text" id="kepzes_leiras" placeholder="Leírás..." onChange={(event) => { setKepzesLeiras(event.target.value); }} />
-            <button onClick={handleSubmit} label="Létrehozás" type="submit">Létrehozás</button>   
-        </form>  
-    );
+  return (
+    <div className={classes["new-kepzes-container"]}>
+      <form className={classes["new-kepzes-form"]} onSubmit={handleSubmit}>
+        <h3>Új képzés létrehozása</h3>
+        <label htmlFor="kepzes_azon">Képzés azonosító</label>
+        <input
+          type="text"
+          id="kepzes_azon"
+          value={kepzesAzon}
+          placeholder="Képzés azonosító..."
+          onChange={(event) => {
+            setKepzesAzon(event.target.value);
+          }}
+          required
+        />
+        <label htmlFor="kepzes_neve">Képzés neve</label>
+        <input
+          type="text"
+          id="kepzes_neve"
+          value={kepzesNeve}
+          placeholder="Képzés neve..."
+          onChange={(event) => {
+            setKepzesNev(event.target.value);
+          }}
+          required
+        />
+        <label htmlFor="kepzes_kategoria">Kategória</label>
+        <input
+          type="text"
+          id="kepzes_kategoria"
+          value={kepzesKategoria}
+          placeholder="Kategória..."
+          onChange={(event) => {
+            setKepzesKat(event.target.value);
+          }}
+        />
+        <label htmlFor="kepzes_max_letszam">Maximum létszám</label>
+        <input
+          type="number"
+          id="kepzes_max_letszam"
+          value={kepzesMaxLetszam}
+          placeholder="Max létszám..."
+          onChange={(event) => {
+            setKepzesMaxLetsz(event.target.value);
+          }}
+          required
+        />
+        <label htmlFor="kepzes_date">Képzés napja</label>
+        <input
+          type="text"
+          id="kepzes_date"
+          value={kepzesDate}
+          placeholder="Képzés napja..."
+          onChange={(event) => {
+            setKepzesDate(event.target.value);
+          }}
+          required
+        />
+        <label htmlFor="kepzes_start_time">Képzés kezdésének ideje</label>
+        <input
+          type="text"
+          id="kepzes_start_time"
+          value={kepzesStartTime}
+          placeholder="Képzési kezdésének ideje..."
+          onChange={(event) => {
+            setKepzesStartTime(event.target.value);
+          }}
+        />
+        <label htmlFor="kepzes_end_time">Képzés végének ideje</label>
+        <input
+          type="text"
+          id="kepzes_end_time"
+          value={kepzesEndTime}
+          placeholder="Képzés végének ideje..."
+          onChange={(event) => {
+            setKepzesEndTime(event.target.value);
+          }}
+        />
+        <label htmlFor="kepzes_leiras">Képzés leírása</label>
+        <input
+          type="text"
+          id="kepzes_leiras"
+          value={kepzesLeiras}
+          placeholder="Képzés leírása..."
+          onChange={(event) => {
+            setKepzesLeiras(event.target.value);
+          }}
+        />
+        <button
+          className={classes["new-kepzes-button"]}
+          label="Létrehozás"
+          type="submit"
+        >
+          Létrehozás
+        </button>
+      </form>
+    </div>
+  );
 }
 export default NewKepzes;

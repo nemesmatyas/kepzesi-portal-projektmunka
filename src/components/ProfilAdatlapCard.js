@@ -4,11 +4,8 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "./firebase-config";
 import { useState } from "react";
 import { doc, onSnapshot } from "firebase/firestore";
-import UjProfilkepForm from "./UjProfilkepForm";
-
 
 const ProfilAdatlapCard = () => {
-
   const [user, setUser] = useState({});
   const [photoURL, setPhotoURL] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr05Ofxi9imMLzZoyfL8jBznxXFDNYCjOs0w&usqp=CAU");
   const [currentUserFirstname, setCurrentUserFirstname] = useState("");
@@ -19,7 +16,6 @@ const ProfilAdatlapCard = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-        console.log(currentUser);
         setUser(currentUser);
         const unsub = onSnapshot(doc(db, "users", currentUser.uid), (doc) => {
           console.log("Current data: ", doc.data());
@@ -38,29 +34,35 @@ const ProfilAdatlapCard = () => {
     };
     },[])
 
+    const profilkepStyles = {
+      maxWidth: "400px",
+      maxHeight: "400px"
+    };
+
   return (
     <div className={classes["profile-data"]}>
-        <table>
+        <table className={classes["profile-data-table"]}>
           <tr>
-            <td className={classes["cimek"]}>Név:</td>
+            <th className={classes["cimek"]}>Név:</th>
             <td>{currentUserLastname} {currentUserFirstname}</td>
           </tr>
           <tr>
-            <td className={classes["cimek"]}>Törzsszám:</td>
+            <th className={classes["cimek"]}>Törzsszám:</th>
             <td>{currentUserIdnumber}</td>
           </tr>
           <tr>
-            <td className={classes["cimek"]}>Beosztás:</td>
+            <th className={classes["cimek"]}>Beosztás:</th>
             <td>{currentUserPosition}</td>
           </tr>
           <tr>
-            <td className={classes["cimek"]}>Munkaviszony kezdete:</td>
+            <th className={classes["cimek"]}>Munkaviszony kezdete:</th>
             <td>{currentUserStartdate}</td>
           </tr>
         </table>
       <div className={classes["profile-pic"]}>
         <img
           src={photoURL}
+          style={profilkepStyles}
           alt="Profilkép"
         />
       </div>

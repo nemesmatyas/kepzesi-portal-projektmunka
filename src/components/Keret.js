@@ -24,6 +24,12 @@ const Keret = () => {
         case '/profil':
             currentPageName = 'Profilom';
             break;
+        case '/ujTechnikaiIsmeret':
+            currentPageName = 'Új technikai ismeret';
+            break;
+        case '/ujTanusitvany':
+            currentPageName = 'Új tanúsítvány';
+            break;
         default:
             currentPageName = 'Kezdőoldal';
     }
@@ -32,7 +38,7 @@ const Keret = () => {
     <>
       <Fejlec pageName={currentPageName} className={classes["fejlec"]} />
         <Outlet />
-      
+      <Lablec />
     </>
   );
 };

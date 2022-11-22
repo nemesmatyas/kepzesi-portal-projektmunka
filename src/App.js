@@ -16,23 +16,21 @@ import NewTechIsm from "./pages/NewTechIsm";
 import NewCert from "./pages/NewCert";
 
 function App() {
-
   return (
     <div className="App">
       <AuthContextProvider>
         <Routes>
           <Route index element={<Login_Page />} />
             <Route path="/" element={<Keret />}>
-              <Route path="kezdooldal" element={<ProtectedRoute><Kezdooldal /></ProtectedRoute>} />
-              <Route path="kepzesek" element={<ProtectedRoute><Kepzesek /></ProtectedRoute>} />
+              <Route path="/kezdooldal" element={<ProtectedRoute><Kezdooldal /></ProtectedRoute>} />
+              <Route path="/kepzesek" element={<ProtectedRoute><Kepzesek /></ProtectedRoute>} />
               <Route path="/kepzesek/:kepzesId" element={<ProtectedRoute><KepzesPage /></ProtectedRoute>} />
-              <Route path="/kepzesek/newkepzes" element={<ProtectedRoute><NewKepzes /></ProtectedRoute>} />
-              <Route path="kompetenciaim" element={<ProtectedRoute><Kompetenciaim /></ProtectedRoute>} />
-              <Route path="kpi" element={<ProtectedRoute><KPI /></ProtectedRoute>}/>
-              <Route path="newuser" element={<ProtectedRoute><NewUser /></ProtectedRoute>}/>
-              <Route path="profil" element={<ProtectedRoute><Profil /></ProtectedRoute>}/>
-              <Route path="ujTechnikaiIsmeret" element={<ProtectedRoute><NewTechIsm /></ProtectedRoute>}/>
-              <Route path="ujTanusitvany" element={<ProtectedRoute><NewCert /></ProtectedRoute>} />
+              <Route path="/kompetenciaim" element={<ProtectedRoute><Kompetenciaim /></ProtectedRoute>} />
+              <Route path="/kpi" element={<ProtectedRoute><KPI /></ProtectedRoute>}/>
+              <Route path="/admin" element={<ProtectedRoute><NewUser /><NewKepzes /></ProtectedRoute>}/>
+              <Route path="/profil" element={<ProtectedRoute><Profil /></ProtectedRoute>}/>
+              <Route path="/ujTechnikaiIsmeret" element={<ProtectedRoute><NewTechIsm /></ProtectedRoute>}/>
+              <Route path="/ujTanusitvany" element={<ProtectedRoute><NewCert /></ProtectedRoute>} />
             </Route>      
             <Route path="*" element={<h1>A keresett oldal nem található.</h1>} />   
         </Routes>

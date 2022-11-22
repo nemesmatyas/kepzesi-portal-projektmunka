@@ -1,10 +1,13 @@
 import classes from "./JelszoValtoztatasForm.module.css";
-import { getAuth, updatePassword, reauthenticateWithCredential, EmailAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  updatePassword,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
+} from "firebase/auth";
 import { useState } from "react";
 
-
 const JelszoValtoztatasForm = () => {
-
   const auth = getAuth();
   const user = auth.currentUser;
   const [currentPassword, setCurrentPassword] = useState("");
@@ -12,27 +15,58 @@ const JelszoValtoztatasForm = () => {
   const [renewPassword, setReNewPassword] = useState("");
 
   const reauthenticate = (currentPassword) => {
-    const authCredential = EmailAuthProvider.credential(user.email, currentPassword);
+    const authCredential = EmailAuthProvider.credential(
+      user.email,
+      currentPassword
+    );
     return reauthenticateWithCredential(user, authCredential);
-  }
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    if(newPassword == renewPassword){
-      console.log("Jelszóváltoztatási kérés elküldve");
 
-      reauthenticate(currentPassword).then(() => {
-        updatePassword(user, newPassword).then(() => {
-          console.log("A jelszó megváltoztatva");
-        }).catch((error) => {
-          console.log(error.message);
-        });
-      }).catch((error) => {
+    if (!newPassword || !renewPassword) {
+      alert("Kérjük, adja meg az új jelszót!");
+      return;
+    }
+
+    if (newPassword !== renewPassword) {
+      alert("Az új jelszavak nem egyeznek!");
+      return;
+    }
+
+    if (currentPassword == newPassword) {
+      alert("A megadott új jelszó megegyezik a jelenlegivel. A jelszóváltoztatáshoz kérjük adjon meg egy új jelszót!");
+      return;
+    }
+    reauthenticate(currentPassword)
+      .then(() => {
+        updatePassword(user, newPassword)
+          .then(() => {
+            alert("Jelszó sikeresen megváltoztatva!");
+            console.log("A jelszó megváltoztatva");
+            setCurrentPassword("");
+            setNewPassword("");
+            setReNewPassword("");
+          })
+          .catch((error) => {
+            if (error.message.includes("weak-password")) {
+              alert(
+                "Az új jelszónak minimum 6 karakter hosszúnak kell lennie!"
+              );
+            }
+            console.log(error.message);
+          });
+      })
+      .catch((error) => {
+        if (error.message.includes("wrong-password")) {
+          alert("A régi jelszó nem megfelelő!");
+        }
         console.log(error.message);
       });
-    } else {
-      console.log("Az új jelszó és az új jelszó ismét nem egyezik!");
-    }
+      setCurrentPassword("");
+      setNewPassword("");
+      setReNewPassword("");
   };
 
   return (
@@ -41,12 +75,29 @@ const JelszoValtoztatasForm = () => {
       <form onSubmit={submitHandler}>
         <div className={classes["jelszo-container"]}>
           <label htmlFor="jelenlegi-jelszo">Jelenlegi jelszó:</label>
-          <input className={classes["jelszo"]} type="password" onChange={(event) => setCurrentPassword(event.target.value)} />
+          <input
+            className={classes["jelszo"]}
+            type="password"
+            value={currentPassword}
+            onChange={(event) => setCurrentPassword(event.target.value)}
+          />
           <label htmlFor="uj-jelszo">Új jelszó:</label>
-          <input className={classes["jelszo"]} type="password" onChange={(event) => setNewPassword(event.target.value)}/>
+          <input
+            className={classes["jelszo"]}
+            type="password"
+            value={newPassword}
+            onChange={(event) => setNewPassword(event.target.value)}
+          />
           <label htmlFor="uj-jelszo-megegyszer">Új jelszó ismét:</label>
-          <input className={classes["jelszo"]} type="password" onChange={(event) => setReNewPassword(event.target.value)}/>
-          <button className={classes["jelszo-button"]} type="submit">Elküld</button>
+          <input
+            className={classes["jelszo"]}
+            type="password"
+            value={renewPassword}
+            onChange={(event) => setReNewPassword(event.target.value)}
+          />
+          <button className={classes["jelszo-button"]} type="submit">
+            Jelszó megváltoztatása
+          </button>
         </div>
       </form>
     </div>

@@ -1,7 +1,9 @@
 .kepzes-tablazat{
-    margin-top: 20px;
-    margin-left: 27%;
-    margin-bottom: 20px;
+    margin: 20px auto;
+}
+
+.kepzes-tablazat td {
+    padding: 15px;
 }
 
 .cimek{
@@ -29,12 +31,24 @@ p{
     height: 30px;
 }
 
+.kepzes-jelentkezes-button, .mar-jelentkezett, .megtelt {
+    margin-left: 80px;
+}
+
+.kepzes-jelentkezes-button:hover {
+    cursor: pointer;
+}
+
+.megtelt, .megtelt:hover {
+  background-color: grey;
+}
+
+.mar-jelentkezett, .mar-jelentkezett:hover {
+  background-color: green;
+}
+
+
 @media (max-width: 400px) and (max-height: 850px) {
-    .kepzes-tablazat{
-        margin-top: 20px;
-        margin-left: 15%;
-        margin-bottom: 20px;
-    }
     
     .cimek{
         width: 120px;
@@ -58,5 +72,10 @@ p{
         height: 25px;
         font-size: 12px;
         width: 100px;
+    }
+
+    .kepzes-jelentkezes-button, .mar-jelentkezett, .megtelt {
+        display: block;
+        margin: 0 auto;
     }
   }
