@@ -2,8 +2,9 @@ import classes from "./KepzesekList.module.css";
 import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { db } from "./firebase-config";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, doc, deleteDoc } from "firebase/firestore";
 import KepzesJelentkezes from "./KepzesJelentkezes";
+import KepzesLeJelentkezes from "./KepzesLeJelentkezes";
 import { UserContext } from "./AuthContext";
 
 const KepzesekList = () => {
@@ -30,6 +31,14 @@ const KepzesekList = () => {
 
   console.log(kepzesLista);
 
+  const deleteDocument = (id) => {
+    deleteDoc(doc(db, "kepzesek", id)).then(() => {
+      console.log("Az ", id ," ID document törölve.");
+    }).catch((error) => {
+      console.error(error.message);
+    })
+  };
+
   return (
     <div className={classes["kepzesek-list"]}>
       <table className={classes["kepzesek-table"]}>
@@ -40,6 +49,7 @@ const KepzesekList = () => {
             <th>Dátum</th>
             <th>Kategória</th>
             <th>Létszám</th>
+            <th></th>
             <th></th>
           </tr>
         </thead>
@@ -58,12 +68,16 @@ const KepzesekList = () => {
                   {resztvevok.length === parseInt(max_letszam, 10) ? (
                     <button className={classes["megtelt"]}>Megtelt</button>
                   ) : resztvevok.includes(userContext.user.email) ? (
-                    <button className={classes["mar-jelentkezett"]}>
+                    <KepzesLeJelentkezes kepzesId={id} resztvevok={resztvevok} />
+                    /*<button className={classes["mar-jelentkezett"]}>
                       Jelentkezve
-                    </button>
+                    </button>*/
                   ) : (
                     <KepzesJelentkezes kepzesId={id} resztvevok={resztvevok} />
                   )}
+                </td>
+                <td>
+                  <button onClick={() => {deleteDocument(id)}}>X</button>
                 </td>
               </tr>
             )
