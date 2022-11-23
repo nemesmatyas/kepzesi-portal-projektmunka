@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createContext, useContext, useEffect } from "react";
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged, createUserWithEmailAndPassword, sendPasswordResetEmail, updateProfile } from "firebase/auth";
-import { auth, db, storage } from "./firebase-config";
+import { auth, db, storage, secondaryauth } from "./firebase-config";
 import { doc, setDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
@@ -23,7 +23,7 @@ export const AuthContextProvider = ({children}) => {
     const register = (registerEmail, registerPassword, registerLastname, registerFirstname,
         registerIdnumber, registerPosition, registerStartdate) => {
 
-        createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+        createUserWithEmailAndPassword(secondaryauth, registerEmail, registerPassword)
         .then(async (result) => {
         const userRef = doc(db, "users", result.user.uid);
         await setDoc(userRef, 
@@ -33,10 +33,12 @@ export const AuthContextProvider = ({children}) => {
             identification_number: registerIdnumber,
             position: registerPosition,
             start_date: registerStartdate});
+            alert("A felhasználó sikeresen létrehozva!");
         })
         .catch((error) => {
             console.log(error.message);
-        });         
+        });
+        signOut(secondaryauth);  
     };
 
     const login = (loginEmail, loginPassword) => {
