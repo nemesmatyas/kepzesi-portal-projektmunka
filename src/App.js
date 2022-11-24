@@ -14,6 +14,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import NewKepzes from "./pages/NewKepzes";
 import NewTechIsm from "./pages/NewTechIsm";
 import NewCert from "./pages/NewCert";
+import KepzesUpdate from "./pages/KepzesUpdate";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path="/kezdooldal" element={<ProtectedRoute><Kezdooldal /></ProtectedRoute>} />
               <Route path="/kepzesek" element={<ProtectedRoute><Kepzesek /></ProtectedRoute>} />
               <Route path="/kepzesek/:kepzesId" element={<ProtectedRoute><KepzesPage /></ProtectedRoute>} />
+              <Route path="/szerkesztes/:kepzesId" element={<ProtectedRoute><KepzesUpdate /></ProtectedRoute>} />
               <Route path="/kompetenciaim" element={<ProtectedRoute><Kompetenciaim /></ProtectedRoute>} />
               <Route path="/kpi" element={<ProtectedRoute><KPI /></ProtectedRoute>}/>
               <Route path="/admin" element={<ProtectedRoute><NewUser /><NewKepzes /></ProtectedRoute>}/>

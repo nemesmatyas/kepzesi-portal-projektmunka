@@ -79,6 +79,9 @@ const KepzesekList = () => {
                 <td>
                   <button onClick={() => {deleteDocument(id)}}>X</button>
                 </td>
+                <td>
+                  <Link to={`/szerkesztes/${id}`}>Szerkesztés</Link>
+                </td>
               </tr>
             )
           )}
