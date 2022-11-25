@@ -2,6 +2,15 @@
     margin-bottom: 40px;
 }
 
+.tech-ism-table {
+    margin: 0 auto;
+}
+
+.tech-ism-table th {
+    padding: 0 15px;
+    width: 30%;
+}
+
 .uj-tech-ism-container {
     display: flex;
     justify-content: center;

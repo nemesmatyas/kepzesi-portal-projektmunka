@@ -40,43 +40,48 @@ const NewTechIsm = () => {
   };
 
   return (
-    <div className={classes["uj-tech-ism-container"]}>
-      <h1 className={classes["uj-tech-ism-h1"]}>
-        Új technikai ismeret létrehozása
-      </h1>
-      <form className={classes["uj-tech-ism-form"]} onSubmit={submitHandler}>
-        <label htmlFor="tech-ism-nev">Technikai ismeret neve</label>
-        <input
-          type="text"
-          id="tech-ism-nev"
-          placeholder="Ismeret neve..."
-          value={ujTechIsmNev}
-          onChange={(e) => setUjTechIsmNev(e.target.value)}
-          required
-        />
-        <label htmlFor="tech-ism-tipus">Technikai ismeret típusa</label>
-        <input
-          type="text"
-          id="tech-ism-tipus"
-          placeholder="Ismeret típusa.."
-          value={ujTechIsmTipus}
-          onChange={(e) => setUjTechIsmTipus(e.target.value)}
-          required
-        />
-        <label htmlFor="tech-ism-szint">Technikai ismeret szintje</label>
-        <select
-          id="tech-ism-szint"
-          value={ujTechIsmSzint}
-          onChange={(e) => setUjTechIsmSzint(e.target.value)}
-        >
-          <option value="Kezdő">Kezdő</option>
-          <option value="Haladó">Haladó</option>
-          <option value="Szakértő">Szakértő</option>
-        </select>
-        <button type="submit" className={classes["uj-tech-ism-mentes-button"]}>
-          Mentés
-        </button>
-      </form>
+    <div className={classes["uj-tech-ism-page"]}>
+      <div className={classes["uj-tech-ism-container"]}>
+        <h1 className={classes["uj-tech-ism-h1"]}>
+          Új technikai ismeret létrehozása
+        </h1>
+        <form className={classes["uj-tech-ism-form"]} onSubmit={submitHandler}>
+          <label htmlFor="tech-ism-nev">Technikai ismeret neve</label>
+          <input
+            type="text"
+            id="tech-ism-nev"
+            placeholder="Ismeret neve..."
+            value={ujTechIsmNev}
+            onChange={(e) => setUjTechIsmNev(e.target.value)}
+            required
+          />
+          <label htmlFor="tech-ism-tipus">Technikai ismeret típusa</label>
+          <input
+            type="text"
+            id="tech-ism-tipus"
+            placeholder="Ismeret típusa.."
+            value={ujTechIsmTipus}
+            onChange={(e) => setUjTechIsmTipus(e.target.value)}
+            required
+          />
+          <label htmlFor="tech-ism-szint">Technikai ismeret szintje</label>
+          <select
+            id="tech-ism-szint"
+            value={ujTechIsmSzint}
+            onChange={(e) => setUjTechIsmSzint(e.target.value)}
+          >
+            <option value="Kezdő">Kezdő</option>
+            <option value="Haladó">Haladó</option>
+            <option value="Szakértő">Szakértő</option>
+          </select>
+          <button
+            type="submit"
+            className={classes["uj-tech-ism-mentes-button"]}
+          >
+            Mentés
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

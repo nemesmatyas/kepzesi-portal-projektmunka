@@ -6,6 +6,9 @@ import { collection, onSnapshot, doc, deleteDoc } from "firebase/firestore";
 import KepzesJelentkezes from "./KepzesJelentkezes";
 import KepzesLeJelentkezes from "./KepzesLeJelentkezes";
 import { UserContext } from "./AuthContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 const KepzesekList = () => {
   const userContext = useContext(UserContext);
@@ -32,11 +35,13 @@ const KepzesekList = () => {
   console.log(kepzesLista);
 
   const deleteDocument = (id) => {
-    deleteDoc(doc(db, "kepzesek", id)).then(() => {
-      console.log("Az ", id ," ID document törölve.");
-    }).catch((error) => {
-      console.error(error.message);
-    })
+    deleteDoc(doc(db, "kepzesek", id))
+      .then(() => {
+        console.log("Az ", id, " ID document törölve.");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   };
 
   return (
@@ -68,19 +73,31 @@ const KepzesekList = () => {
                   {resztvevok.length === parseInt(max_letszam, 10) ? (
                     <button className={classes["megtelt"]}>Megtelt</button>
                   ) : resztvevok.includes(userContext.user.email) ? (
-                    <KepzesLeJelentkezes kepzesId={id} resztvevok={resztvevok} />
-                    /*<button className={classes["mar-jelentkezett"]}>
-                      Jelentkezve
-                    </button>*/
+                    <KepzesLeJelentkezes
+                      kepzesId={id}
+                      resztvevok={resztvevok}
+                    />
                   ) : (
                     <KepzesJelentkezes kepzesId={id} resztvevok={resztvevok} />
                   )}
                 </td>
                 <td>
-                  <button onClick={() => {deleteDocument(id)}}>X</button>
+                  <button
+                    className={classes["kepzes-torles-button"]}
+                    onClick={() => {
+                      deleteDocument(id);
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faTrashCan} />
+                  </button>
                 </td>
                 <td>
-                  <Link to={`/szerkesztes/${id}`}>Szerkesztés</Link>
+                  <Link
+                    to={`/szerkesztes/${id}`}
+                    className={classes["kepzes-szerk-button"]}
+                  >
+                    <FontAwesomeIcon icon={faPen} />
+                  </Link>
                 </td>
               </tr>
             )

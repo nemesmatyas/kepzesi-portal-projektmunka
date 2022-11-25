@@ -14,6 +14,32 @@
   background-color: green;
 }
 
+.kepzes-torles-button {
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  margin: 10px;
+  padding: 5px;
+}
+
+.kepzes-torles-button:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: grey;
+}
+
+.kepzes-szerk-button {
+  display: inline-block;
+  color: black;
+  font-size: 20px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.kepzes-szerk-button:hover {
+  color: grey;
+}
+
 @media (max-width: 400px) and (max-height: 850px) {
   .kepzesek-table {
     margin-top: 50px;

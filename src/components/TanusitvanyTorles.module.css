@@ -3,10 +3,14 @@
     width: 150px;
     height: 30px;
     font-size: 20px;
+    background-color: transparent;
+    border: none;
 }
 
 .cert-torles:hover {
     cursor: pointer;
+    background-color: transparent;
+    color: grey;
 }
 
 @media (max-width: 400px) and (max-height: 850px) {

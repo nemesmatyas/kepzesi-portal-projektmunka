@@ -41,6 +41,7 @@ const TechnikaiIsmeretek = () => {
 
   return (
     <div className={classes["tech-ism-container"]}>
+      <h1>Technikai ismeretek</h1>
       {technikaiIsmeretek.length === 0 ? (
         <div className={classes["nincs-tech-ism"]}>Nincs technikai ismeret</div>
       ) : (
@@ -51,7 +52,7 @@ const TechnikaiIsmeretek = () => {
               <th>Ismeret neve</th>
               <th>Ismeret típusa</th>
               <th>Ismeret szintje</th>
-              <th></th>
+              <th style={{width: "10%"}}></th>
             </tr>
           </thead>
           <tbody>

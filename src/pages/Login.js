@@ -28,15 +28,21 @@ function Login_Page() {
 
   const forgotPasswordHandler = (event) => {
     event.preventDefault();
-    if(loginEmail) forgotPassword(loginEmail).then(() => {
-      console.log("Az elfelejtett jelszó a ",loginEmail," e-mail címre elküldve!");
-      setLoginEmail("");
-    })
+    if (loginEmail)
+      forgotPassword(loginEmail).then(() => {
+        console.log(
+          "Az elfelejtett jelszó a ",
+          loginEmail,
+          " e-mail címre elküldve!"
+        );
+        alert(`A jelszóemlékeztető elküldve a ${loginEmail} email címre!`);
+        setLoginEmail("");
+      });
   };
 
   return (
     <>
-      <h1 className={classes["kepzesi-portal"]}>Képzési portál</h1>
+      <h1 className={classes["kepzesi-portal-h1"]}>Képzési portál</h1>
       <div className={classes["login-page"]}>
         <div className={classes["login-container"]}>
           <h3 className={classes["login-header"]}>Kérjük, jelentkezzen be!</h3>
@@ -48,6 +54,7 @@ function Login_Page() {
                 type="email"
                 id="login_email"
                 placeholder="Email..."
+                value={loginEmail}
                 onChange={(event) => setLoginEmail(event.target.value)}
               />
               <label htmlFor="login_password">Jelszó</label>
@@ -56,9 +63,9 @@ function Login_Page() {
                 type="password"
                 id="login_password"
                 placeholder="Jelszó..."
+                value={loginPassword}
                 onChange={(event) => setLoginPassword(event.target.value)}
               />
-              <a href="/" onClick={forgotPasswordHandler}>Elfelejtette a jelszavát?</a>
               {error ? (
                 <div className={classes["login-invalid"]}>
                   Helytelen felhasználónév vagy jelszó.
@@ -66,14 +73,19 @@ function Login_Page() {
               ) : (
                 <div className={classes["login-invalid-hidden"]}></div>
               )}
-              <button
-                className={classes["login-button"]}
-                onClick={login}
-                label="Bejelentkezés"
-                type="submit"
-              >
-                Bejelentkezés
-              </button>
+              <div className={classes["login-button-container"]}>
+                <a className={classes["login-forgot-password-link"]} href="/" onClick={forgotPasswordHandler}>
+                  Elfelejtette a jelszavát?
+                </a>
+                <button
+                  className={classes["login-button"]}
+                  onClick={login}
+                  label="Bejelentkezés"
+                  type="submit"
+                >
+                  Bejelentkezés
+                </button>
+              </div>
             </form>
           </div>
         </div>

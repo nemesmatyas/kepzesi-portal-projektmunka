@@ -2,6 +2,14 @@
     margin-bottom: 20px;
 }
 
+.certs-table {
+    margin: 0 auto;
+}
+
+.certs-table th {
+    width: 22%;
+}
+
 .uj-cert-container {
     display: flex;
     justify-content: center;

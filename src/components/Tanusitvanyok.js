@@ -37,10 +37,11 @@ const Tanusitvanyok = () => {
 
   return (
     <div className={classes["certs-container"]}>
+      <h1>Tanúsítványok</h1>
       {tanusitvanyok.length === 0 ? (
         <div className={classes["nincs-cert"]}>Nincs megjeleníthető tanúsítvány!</div>
       ) : (
-        <table>
+        <table className={classes["certs-table"]}>
           <caption>Tanúsítványok</caption>
           <thead>
             <tr>
@@ -48,7 +49,7 @@ const Tanusitvanyok = () => {
               <th>Tanúsítvány neve</th>
               <th>Kiállítás dátuma</th>
               <th>Érvényességi idő</th>
-              <th></th>
+              <th style={{ width: "10%"}}></th>
             </tr>
           </thead>
           <tbody>

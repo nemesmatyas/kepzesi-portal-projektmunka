@@ -1,6 +1,8 @@
-.kepzesi-portal {
-    margin: 0 0 0 40px;
-    padding-top: 10px;
+.kepzesi-portal-h1 {
+    margin: 0;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
 }
 
 .login-page {
@@ -51,6 +53,14 @@
     display: block;
 }
 
+.login-button-container {
+    max-width: 85%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 .login-button {
     font-size: 18px;
     background-color: rgb(0, 112, 87);
@@ -60,8 +70,6 @@
     font-weight: 600;
     padding: 8px;
     cursor: pointer;
-    margin-top: 15px;
-    margin-left: 30px;
 }
 
 .login-invalid {
@@ -70,22 +78,31 @@
     margin-left: 30px;
 }
 
+.login-forgot-password-link {
+    font-size: 18px;
+    margin-left: 30px;
+}
+
 .login-invalid-hidden {
     margin-bottom: 30px;
 }
 
 @media (max-width: 400px) and (max-height: 850px) {
-    .kepzesi-portal {
-        margin: 0 0 0 20px;
+    .kepzesi-portal-h1 {
         font-size: 28px;
     }
     
     .login-page {
         height: 80vh;
+        margin: 0 auto;
     }
     
     .login-container {
-        width: 350px;
+        width: 350px; 
+    }
+
+    .login-form {
+        margin: 0 auto;
     }
 
     .login-header {

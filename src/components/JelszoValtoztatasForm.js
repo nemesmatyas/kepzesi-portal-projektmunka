@@ -36,7 +36,9 @@ const JelszoValtoztatasForm = () => {
     }
 
     if (currentPassword == newPassword) {
-      alert("A megadott új jelszó megegyezik a jelenlegivel. A jelszóváltoztatáshoz kérjük adjon meg egy új jelszót!");
+      alert(
+        "A megadott új jelszó megegyezik a jelenlegivel. A jelszóváltoztatáshoz kérjük adjon meg egy új jelszót!"
+      );
       return;
     }
     reauthenticate(currentPassword)
@@ -64,9 +66,9 @@ const JelszoValtoztatasForm = () => {
         }
         console.log(error.message);
       });
-      setCurrentPassword("");
-      setNewPassword("");
-      setReNewPassword("");
+    setCurrentPassword("");
+    setNewPassword("");
+    setReNewPassword("");
   };
 
   return (
@@ -76,6 +78,7 @@ const JelszoValtoztatasForm = () => {
         <div className={classes["jelszo-container"]}>
           <label htmlFor="jelenlegi-jelszo">Jelenlegi jelszó:</label>
           <input
+            id="jelenlegi-jelszo"
             className={classes["jelszo"]}
             type="password"
             value={currentPassword}
@@ -83,6 +86,7 @@ const JelszoValtoztatasForm = () => {
           />
           <label htmlFor="uj-jelszo">Új jelszó:</label>
           <input
+            id="uj-jelszo"
             className={classes["jelszo"]}
             type="password"
             value={newPassword}
@@ -90,6 +94,7 @@ const JelszoValtoztatasForm = () => {
           />
           <label htmlFor="uj-jelszo-megegyszer">Új jelszó ismét:</label>
           <input
+            id="uj-jelszo-megegyszer"
             className={classes["jelszo"]}
             type="password"
             value={renewPassword}
